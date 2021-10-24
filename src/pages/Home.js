@@ -42,16 +42,15 @@ function Home() {
   return (
     <Container>
       <Outter>
-        <div>
-          <ul>
-            {users.map((user) => (
-              <li key={user.id}>
-                {user.id} {user.name} ({user.desc}) {user.sights}
-                {user.thumbnail}
-              </li>
-            ))}
-          </ul>
-        </div>
+        <Location>
+          {users.map((user) => (
+            <li key={user.id}>
+              {user.id} {user.name} ({user.desc})
+              <img src={user.sights} alt="thumbnail" />
+              {user.thumbnail}
+            </li>
+          ))}
+        </Location>
         <h4>#내가 원하는 제주 여행은?</h4>
         <SelecOptions>
           <p>#자연#힐링</p>
@@ -77,12 +76,18 @@ const Outter = styled.div`
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  width: 100vw;
-  height: 100vh;
+  width: 90vw;
+  height: 95vh;
   max-width: 400px;
   padding: 0vh 16px;
   border: 1px solid black;
   box-sizing: border-box;
+`;
+
+const Location = styled.div`
+  width: 90vw;
+  height: 95vh;
+  list-tyle: none;
 `;
 
 const SelecOptions = styled.div`
@@ -96,22 +101,5 @@ const SelecOptions = styled.div`
     color: #ffa01e;
   }
 `;
-
-// const Whatis = styled.div`
-//   text-align: center;
-// `;
-
-// const SelecContainer = styled.div`
-//   display: flex;
-//   justify-content: center;
-//   cursor: pointer;
-//   & > p {
-//     border: 1px solid #ffa01e;
-//     width: 15vw;
-//     height: 9vh;
-//     text-align: center;
-//     color: #ffa01e;
-//   }
-// `;
 
 export default Home;
