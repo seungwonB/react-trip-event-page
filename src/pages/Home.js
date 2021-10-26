@@ -45,12 +45,17 @@ function Home() {
         <Location>
           {users.map((user) => (
             <li key={user.id}>
-              {user.id} {user.name} ({user.desc})
-              <img src={user.sights} alt="thumbnail" />
-              {user.thumbnail}
+              <Thumbnail src={user.thumbnail} alt="thumbnail" />
+              <Where>
+                <Where2>0{user.id}.</Where2> {user.name}
+              </Where>
+              {user.desc}
+              <Recommend> 추천명소 :{user.sights}</Recommend>
+              <br></br>
             </li>
           ))}
         </Location>
+
         <h4>#내가 원하는 제주 여행은?</h4>
         <SelecOptions>
           <p>#자연#힐링</p>
@@ -64,11 +69,11 @@ function Home() {
 
 const Container = styled.div`
   display: flex;
-  height: 100vh;
+  height: 100%;
   width: 100vw;
-  overflow: hidden;
   padding: 16px;
   box-sizing: border-box;
+  overflow: scroll;
 `;
 
 const Outter = styled.div`
@@ -76,18 +81,36 @@ const Outter = styled.div`
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  width: 90vw;
-  height: 95vh;
+  width: 100vw;
+  height: 100%;
   max-width: 400px;
-  padding: 0vh 16px;
-  border: 1px solid black;
-  box-sizing: border-box;
+  padding: 0vh 1px;
 `;
 
 const Location = styled.div`
   width: 90vw;
-  height: 95vh;
-  list-tyle: none;
+
+  & > li {
+    list-style: none;
+  }
+`;
+
+const Where = styled.div`
+  font-size: 30px;
+`;
+
+const Where2 = styled.span`
+  color: #ffa01e;
+`;
+
+const Thumbnail = styled.img`
+  width: 340px;
+  height: 180px;
+  border: 3px solid black;
+`;
+
+const Recommend = styled.div`
+  color: #40a940;
 `;
 
 const SelecOptions = styled.div`
