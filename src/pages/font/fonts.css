@@ -1,0 +1,17 @@
+@font-face {
+  font-family: "NanumBold";
+  font-weight: 50;
+  src: url("./NanumGothic-Bold.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "NanumExtraBold";
+  font-weight: 50;
+  src: url("./NanumGothic-ExtraBold.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "NanumRegular";
+  font-weight: 50;
+  src: url("./NanumGothic-Regular.ttf") format("truetype");
+}
