@@ -1,15 +1,8 @@
 import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import axios from "axios";
-
-axios({
-  method: "get",
-  url: "https://f177470e-beca-4f6a-9c56-1afd36fe9484.mock.pstmn.io/location",
-
-  responseType: "json",
-}).then(function (response) {
-  console.log(response.data);
-});
+import "./font/fonts.css";
+require("dotenv").config();
 
 function Home() {
   const [users, setUsers] = useState(null);
@@ -23,9 +16,7 @@ function Home() {
         setUsers(null);
         // loading 상태를 true 로 바꿉니다.
         setLoading(true);
-        const response = await axios.get(
-          "https://f177470e-beca-4f6a-9c56-1afd36fe9484.mock.pstmn.io/location"
-        );
+        const response = await axios.get(process.env.REACT_APP_LOCATION_URL);
         setUsers(response.data); // 데이터는 response.data 안에 들어있습니다.
       } catch (e) {
         setError(e);
@@ -52,15 +43,16 @@ function Home() {
               {user.desc}
               <Recommend> 추천명소 :{user.sights}</Recommend>
               <br></br>
+              <br></br>
             </li>
           ))}
         </Location>
 
         <h4>#내가 원하는 제주 여행은?</h4>
         <SelecOptions>
-          <p>#자연#힐링</p>
-          <p>#활동#재미</p>
-          <p>#가족#아이</p>
+          <a href="#">#자연#힐링</a>
+          <a href="#">#활동#재미</a>
+          <a href="#">#가족#아이</a>
         </SelecOptions>
       </Outter>
     </Container>
@@ -69,11 +61,10 @@ function Home() {
 
 const Container = styled.div`
   display: flex;
-  height: 100%;
   width: 100vw;
   padding: 16px;
+
   box-sizing: border-box;
-  overflow: scroll;
 `;
 
 const Outter = styled.div`
@@ -82,14 +73,15 @@ const Outter = styled.div`
   justify-content: center;
   flex-direction: column;
   width: 100vw;
-  height: 100%;
+  margin: 0px auto;
   max-width: 400px;
-  padding: 0vh 1px;
+  border: 1px solid black;
+  padding: 0vh 16px;
+  padding-top: 10px;
+  font-family: "NanumRegular";
 `;
 
 const Location = styled.div`
-  width: 90vw;
-
   & > li {
     list-style: none;
   }
@@ -97,6 +89,7 @@ const Location = styled.div`
 
 const Where = styled.div`
   font-size: 30px;
+  font-family: "NanumBold";
 `;
 
 const Where2 = styled.span`
@@ -104,8 +97,7 @@ const Where2 = styled.span`
 `;
 
 const Thumbnail = styled.img`
-  width: 340px;
-  height: 180px;
+  width: 30vw;
   border: 3px solid black;
 `;
 
@@ -113,15 +105,13 @@ const Recommend = styled.div`
   color: #40a940;
 `;
 
-const SelecOptions = styled.div`
+const SelecOptions = styled.nav`
   display: flex;
   cursor: pointer;
-  & > p {
-    border: 1px solid #ffa01e;
-    width: 25vw;
-    height: 5vh;
-    text-align: center;
-    color: #ffa01e;
+
+  & > a {
+    padding: 9px;
+    border: 1px solid black;
   }
 `;
 
