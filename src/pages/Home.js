@@ -2,6 +2,9 @@ import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import axios from "axios";
 import "./font/fonts.css";
+import sokcho from "./sokcho.png";
+import map from "./map.png";
+
 require("dotenv").config();
 
 function Home() {
@@ -34,6 +37,10 @@ function Home() {
     <Container>
       <Outter>
         <Location>
+          <Sokcho>
+            <img src={sokcho} />
+            <img src={map} />
+          </Sokcho>
           {users.map((user) => (
             <li key={user.id}>
               <Thumbnail src={user.thumbnail} alt="thumbnail" />
@@ -48,7 +55,7 @@ function Home() {
           ))}
         </Location>
 
-        <h4>#내가 원하는 제주 여행은?</h4>
+        <h4>#내가 원하는 속초 여행은?</h4>
         <SelecOptions>
           <a href="#">#자연#힐링</a>
           <a href="#">#활동#재미</a>
@@ -75,10 +82,20 @@ const Outter = styled.div`
   width: 100vw;
   margin: 0px auto;
   max-width: 400px;
-  border: 1px solid black;
+  // border: 1px solid black;
   padding: 0vh 16px;
   padding-top: 10px;
   font-family: "NanumRegular";
+`;
+
+const Sokcho = styled.div`
+  text-align: center;
+  padding-bottom: 16px;
+
+  & > img {
+    width: 75%;
+    padding-bottom: 16px;
+  }
 `;
 
 const Location = styled.div`
@@ -97,7 +114,7 @@ const Where2 = styled.span`
 `;
 
 const Thumbnail = styled.img`
-  width: 30vw;
+  width: 50%;
   border: 3px solid black;
 `;
 
@@ -111,7 +128,10 @@ const SelecOptions = styled.nav`
 
   & > a {
     padding: 9px;
-    border: 1px solid black;
+    border: 2px solid #1e82ff;
+    color: #1e82ff;
+    text-decoration: none;
+    background-color: white;
   }
 `;
 
