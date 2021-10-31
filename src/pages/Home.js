@@ -57,9 +57,9 @@ function Home() {
 
         <h4>#내가 원하는 속초 여행은?</h4>
         <SelecOptions>
-          <a href="#">#자연#힐링</a>
-          <a href="#">#활동#재미</a>
-          <a href="#">#가족#아이</a>
+          <a href="/card">#자연#힐링</a>
+          <a href="/active">#활동#재미</a>
+          <a href="/family">#가족#아이</a>
         </SelecOptions>
       </Outter>
     </Container>
