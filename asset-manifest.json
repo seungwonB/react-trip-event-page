@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/react-trip-event-pages/static/css/main.eef8e62a.chunk.css",
+    "main.js": "/react-trip-event-pages/static/js/main.b40511ef.chunk.js",
+    "main.js.map": "/react-trip-event-pages/static/js/main.b40511ef.chunk.js.map",
+    "runtime-main.js": "/react-trip-event-pages/static/js/runtime-main.4f029622.js",
+    "runtime-main.js.map": "/react-trip-event-pages/static/js/runtime-main.4f029622.js.map",
+    "static/js/2.589f9edb.chunk.js": "/react-trip-event-pages/static/js/2.589f9edb.chunk.js",
+    "static/js/2.589f9edb.chunk.js.map": "/react-trip-event-pages/static/js/2.589f9edb.chunk.js.map",
+    "static/js/3.0bdab3bb.chunk.js": "/react-trip-event-pages/static/js/3.0bdab3bb.chunk.js",
+    "static/js/3.0bdab3bb.chunk.js.map": "/react-trip-event-pages/static/js/3.0bdab3bb.chunk.js.map",
+    "index.html": "/react-trip-event-pages/index.html",
+    "static/css/main.eef8e62a.chunk.css.map": "/react-trip-event-pages/static/css/main.eef8e62a.chunk.css.map",
+    "static/js/2.589f9edb.chunk.js.LICENSE.txt": "/react-trip-event-pages/static/js/2.589f9edb.chunk.js.LICENSE.txt",
+    "static/media/fonts.css": "/react-trip-event-pages/static/media/NanumGothic-Regular.6c84540d.ttf",
+    "static/media/map.4f8cf958.png": "/react-trip-event-pages/static/media/map.4f8cf958.png",
+    "static/media/sokcho.ad6b6d29.png": "/react-trip-event-pages/static/media/sokcho.ad6b6d29.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.4f029622.js",
+    "static/js/2.589f9edb.chunk.js",
+    "static/css/main.eef8e62a.chunk.css",
+    "static/js/main.b40511ef.chunk.js"
+  ]
+}
