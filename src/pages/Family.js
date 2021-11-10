@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import axios from "axios";
-import "./font/fonts.css";
+import "../assets/font/fonts.css";
 require("dotenv").config();
 
 function Family() {
-  const [users, setUsers] = useState([]);
-
+  const [themes, setUsers] = useState([]);
+  const [themeId] = useState(2);
   function addComma(num) {
     var regexp = /\B(?=(\d{3})+(?!\d))/g;
     return num.toString().replace(regexp, ",");
@@ -14,32 +14,34 @@ function Family() {
 
   const fetchUsers = async () => {
     const response = await axios.get(process.env.REACT_APP_PRODUCT_URL);
-    setUsers(response.data.themes);
     console.log(response.data);
+    setUsers(response.data.themes);
+    
   };
   useEffect(() => {
     fetchUsers();
   }, []);
+
   return (
     <Container>
-      {users.map((user) => {
+      {themes.length > 0 && themes[themeId].trips.map((trip, index) => {
         return (
-          <Product key={user.id}>
+          <Product key={index}>
             <Thumbnail
-              src={user.trips[user.id].thumbnail}
+              src={trip.thumbnail}
               alt="thumbnail"
             ></Thumbnail>
             <Ticket>
-              {user.trips[user.id].ticket_type}
-              <div>{user.trips[user.id].discount_percent}%</div>
+              {trip.ticket_type}
+              <div>{trip.discount_percent}%</div>
             </Ticket>
             <Location>
-              [{user.trips[user.id].location}]<br></br>
-              {user.trips[user.id].title}
+              [{trip.location}]<br></br>
+              {trip.title}
             </Location>
             <Price>
-              <span>{addComma(user.trips[user.id].price_origin)}원</span>
-              <div>{addComma(user.trips[user.id].price_discounted)}원~</div>
+              <span>{addComma(trip.price_origin)}원</span>
+              <div>{addComma(trip.price_discounted)}원~</div>
             </Price>
           </Product>
         );
